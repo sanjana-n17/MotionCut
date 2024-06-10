@@ -71,17 +71,24 @@ def provide_feedback(user_answer, correct_answer):
         return -2  # For incorrect answer
 
 def main():
-    questions = get_questions()
-    score = 0
+    print("Welcome to the quiz!")
+    start_quiz = input("Do you want to start the quiz? (yes/no): ").strip().lower()
+    while start_quiz not in ["yes", "no"]:
+        print("Invalid input. Please enter 'yes' or 'no'.")
+        start_quiz = input("Do you want to start the quiz? (yes/no): ").strip().lower()
 
-    for question_data in questions:
-        user_answer = ask_question(question_data)
-        score_change = provide_feedback(user_answer, question_data["answer"])
-        score += score_change
-        print() 
+    if start_quiz == "yes":
+        questions = get_questions()
+        score = 0
 
-    print(f"Quiz completed! Your final score is {score} out of {len(questions) * 5}.")
+        for question_data in questions:
+            user_answer = ask_question(question_data)
+            score_change = provide_feedback(user_answer, question_data["answer"])
+            score += score_change
+            print() 
 
+        print(f"Quiz completed! Your final score is {score} out of {len(questions) * 5}.")
+        
 if __name__ == "__main__":
     main()
 
