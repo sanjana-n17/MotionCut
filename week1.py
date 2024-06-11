@@ -46,7 +46,7 @@ def get_questions():
             "answer": "C"
         },
         {
-            "question": "10. dataWhich of the following algorithms is used for public-key cryptography?",
+            "question": "10. Which of the following algorithms is used for public-key cryptography?",
             "options": ["A. AES", "B. DES", "C. SHA-256", "D. RSA"],
             "answer": "D"
         }
